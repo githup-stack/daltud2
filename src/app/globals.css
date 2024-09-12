@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("/Users/nguyentronganh/Downloads/daltud2/styles/theme.css");
+@import url("../styles/theme.css");
 
 body {
   font-family: "Inter", sans-serif;

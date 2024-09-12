@@ -1,11 +1,38 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextRequest, NextResponse } from "next/server";
 
-const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
+// Danh sách tuyến đường công cộng và bị bỏ qua
+const publicRoutes = [
+  "/",
+  "/api/webhook",
+  "/question/",
+  "/tags",
+  "/tags/",
+  "/profile/",
+  "/community",
+  "/jobs",
+];
+const ignoredRoutes = ["/api/webhook", "/api/chatgpt"];
 
-export default clerkMiddleware((auth, request) => {
-  if (!isPublicRoute(request)) {
-    auth().protect();
+export default clerkMiddleware(async (auth, request: NextRequest) => {
+  // Lấy đường dẫn từ request
+  const pathname = request.nextUrl.pathname;
+
+  // Nếu là tuyến đường công cộng hoặc bị bỏ qua, không cần bảo vệ
+  if (
+    publicRoutes.some((route) => pathname.startsWith(route)) ||
+    ignoredRoutes.some((route) => pathname.startsWith(route))
+  ) {
+    return NextResponse.next();
   }
+
+  // Bảo vệ các tuyến đường còn lại
+  const user = await auth();
+  if (!user) {
+    return NextResponse.redirect(new URL("/sign-in", request.url));
+  }
+
+  return NextResponse.next();
 });
 
 export const config = {
