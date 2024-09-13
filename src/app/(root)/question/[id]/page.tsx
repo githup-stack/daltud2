@@ -5,7 +5,7 @@ import Votes from "@/components/shared/Votes";
 import { getQuestionById } from "@/lib/actions/question.action";
 import { getUserById } from "@/lib/actions/user.action";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
-import { useAuth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,7 +13,7 @@ import Answer from "../../../../database/answer.model";
 import ParseHTML from "@/components/shared/ParseHTML";
 
 const Page = async ({ params, searchParams }: any) => {
-  const { userId: clerkId } = useAuth();
+  const { userId: clerkId } = auth();
 
   let mongoUser;
 

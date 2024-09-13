@@ -4,12 +4,12 @@ import NoResult from "@/components/shared/NoResult";
 import Pagination from "@/components/shared/Pagination";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { getSavedQuestions } from "@/lib/actions/user.action";
-import { useAuth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { SearchParamsProps } from "../../../types";
 import { QuestionFilters } from "../../../constants/filters";
 
 export default async function Home({ searchParams }: SearchParamsProps) {
-  const { userId } = useAuth();
+  const { userId } = auth();
 
   if (!userId) return null;
 
