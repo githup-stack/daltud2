@@ -1,6 +1,6 @@
 import { formatAndDivideNumber } from "@/lib/utils";
 import Image from "next/image";
-import { BadgeCounts } from "../../../types";
+import { BadgeCounts } from "../../types";
 
 interface StatsCardProps {
   imgUrl: string;

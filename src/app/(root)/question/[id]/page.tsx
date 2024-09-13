@@ -5,15 +5,15 @@ import Votes from "@/components/shared/Votes";
 import { getQuestionById } from "@/lib/actions/question.action";
 import { getUserById } from "@/lib/actions/user.action";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
-import { auth } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Answer from "../../../../../database/answer.model";
+import Answer from "../../../../database/answer.model";
 import ParseHTML from "@/components/shared/ParseHTML";
 
 const Page = async ({ params, searchParams }: any) => {
-  const { userId: clerkId } = auth();
+  const { userId: clerkId } = useAuth();
 
   let mongoUser;
 
@@ -84,7 +84,7 @@ const Page = async ({ params, searchParams }: any) => {
         />
       </div>
 
-      <ParseHTML data={result.content} />
+      <ParseHTML data={result.content} imgUrl={""} title={""} />
 
       <div className="mt-8 flex flex-wrap gap-2">
         {result.tags.map((tag: any) => (

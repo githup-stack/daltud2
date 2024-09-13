@@ -20,7 +20,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion, editQuestion } from "@/lib/actions/question.action";
 import { useRouter, usePathname } from "next/navigation";
-import { useTheme } from "../../../context/ThemeProvider";
+import { useTheme } from "../../context/ThemeProvider";
 
 interface Props {
   type?: string;

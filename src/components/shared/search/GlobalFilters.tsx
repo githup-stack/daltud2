@@ -3,7 +3,7 @@
 import { formUrlQuery } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
-import { GlobalSearchFilters } from "../../../../constants/filters";
+import { GlobalSearchFilters } from "../../../constants/filters";
 
 const GlobalFilters = () => {
   const router = useRouter();

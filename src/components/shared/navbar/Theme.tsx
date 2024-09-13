@@ -9,8 +9,8 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Image from "next/image";
-import { useTheme } from "../../../../context/ThemeProvider";
-import { themes } from "../../../../constants";
+import { useTheme } from "../../../context/ThemeProvider";
+import { themes } from "../../../constants";
 
 const Theme = () => {
   const { mode, setMode } = useTheme();

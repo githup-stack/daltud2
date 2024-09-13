@@ -1,7 +1,7 @@
 import { getUserAnswers } from "@/lib/actions/user.action";
 import AnswerCard from "../cards/AnswerCard";
 import Pagination from "./Pagination";
-import { SearchParamsProps } from "../../../types";
+import { SearchParamsProps } from "../../types";
 
 interface Props extends SearchParamsProps {
   userId: string;

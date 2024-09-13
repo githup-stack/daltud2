@@ -4,10 +4,10 @@ import { getAnswers } from "@/lib/actions/answer.action";
 import Link from "next/link";
 import Image from "next/image";
 import { getTimestamp } from "@/lib/utils";
-import ParseHTML from "./ParseHTML";
 import Votes from "./Votes";
 import Pagination from "./Pagination";
-import { AnswerFilters } from "../../../constants/filters";
+import { AnswerFilters } from "../../constants/filters";
+import ParseHTML from "@/components/shared/ParseHTML";
 
 interface Props {
   questionId: string;
@@ -75,7 +75,7 @@ const AllAnswers = async ({
                 />
               </div>
             </div>
-            <ParseHTML data={answer.content} />
+            <ParseHTML data={answer.content} imgUrl={""} title={""} />
           </article>
         ))}
       </div>

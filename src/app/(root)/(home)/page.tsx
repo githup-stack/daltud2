@@ -12,16 +12,16 @@ import {
 import Link from "next/link";
 
 import type { Metadata } from "next";
-import { auth } from "@clerk/nextjs";
-import { HomePageFilters } from "../../../../constants/filters";
-import { SearchParamsProps } from "../../../../types";
+import { useAuth } from "@clerk/nextjs";
+import { HomePageFilters } from "../../../constants/filters";
+import { SearchParamsProps } from "../../../types";
 
 export const metadata: Metadata = {
   title: "Home | Dev Overflow",
 };
 
 export default async function Home({ searchParams }: SearchParamsProps) {
-  const { userId } = auth();
+  const { userId } = useAuth();
 
   let result;
 

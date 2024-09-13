@@ -8,10 +8,10 @@ import {
   GetAnswersParams,
 } from "./shared.types";
 import { revalidatePath } from "next/cache";
-import Answer from "../../../database/answer.model";
-import Interaction from "../../../database/interaction.model";
-import User from "../../../database/user.model";
-import Question from "../../../database/question.model";
+import Answer from "../../database/answer.model";
+import Interaction from "../../database/interaction.model";
+import User from "../../database/user.model";
+import Question from "../../database/question.model";
 
 export async function createAnswer(params: CreateAnswerParams) {
   try {

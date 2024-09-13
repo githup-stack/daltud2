@@ -1,8 +1,8 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import qs from "query-string";
-import { BADGE_CRITERIA } from "../../constants";
-import { BadgeCounts } from "../../types";
+import { BADGE_CRITERIA } from "../constants";
+import { BadgeCounts } from "../types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

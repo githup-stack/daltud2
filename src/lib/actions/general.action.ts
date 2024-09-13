@@ -1,9 +1,9 @@
 "use server";
 
-import Answer from "../../../database/answer.model";
-import Question from "../../../database/question.model";
-import Tag from "../../../database/tag.model";
-import User from "../../../database/user.model";
+import Answer from "../../database/answer.model";
+import Question from "../../database/question.model";
+import Tag from "../../database/tag.model";
+import User from "../../database/user.model";
 import { connectToDatabase } from "../mongoose";
 import { SearchParams } from "./shared.types";
 

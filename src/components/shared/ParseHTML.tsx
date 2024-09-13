@@ -5,6 +5,7 @@ interface ProfileLinkProps {
   imgUrl: string;
   href?: string;
   title: string;
+  data?: string;
 }
 
 const ProfileLink = ({ imgUrl, href, title }: ProfileLinkProps) => {

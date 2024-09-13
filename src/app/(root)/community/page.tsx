@@ -5,8 +5,8 @@ import { getAllUsers } from "@/lib/actions/user.action";
 import Link from "next/link";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { SearchParamsProps } from "../../../../types";
-import { UserFilters } from "../../../../constants/filters";
+import { SearchParamsProps } from "../../../types";
+import { UserFilters } from "../../../constants/filters";
 
 export const metadata: Metadata = {
   title: "Community | Dev Overflow",

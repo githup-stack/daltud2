@@ -14,11 +14,11 @@ import {
 } from "./shared.types";
 import { revalidatePath } from "next/cache";
 import { assignBadges } from "../utils";
-import User from "../../../database/user.model";
-import Question from "../../../database/question.model";
-import Answer from "../../../database/answer.model";
-import Tag from "../../../database/tag.model";
-import { BadgeCriteriaType } from "../../../types";
+import User from "../../database/user.model";
+import Question from "../../database/question.model";
+import Answer from "../../database/answer.model";
+import Tag from "../../database/tag.model";
+import { BadgeCriteriaType } from "../../types";
 
 export async function getUserById(params: any) {
   try {
